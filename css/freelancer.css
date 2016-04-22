@@ -499,3 +499,20 @@ footer .footer-below {
 .modal-body p {
     margin-bottom: 20px;
 }
+
+.about-ul {
+    line-height:2em;
+    /*color:darkgray;*/
+}
+
+.about-ul b {
+
+}
+
+.about-ul ul {
+    list-style-type: none;
+}
+
+.about-ul h3 {
+    margin-bottom:30px;
+}
