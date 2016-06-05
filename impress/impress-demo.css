@@ -1,0 +1,402 @@
+/*
+    So you like the style of impress.js demo?
+    Or maybe you are just curious how it was done?
+
+    You couldn't find a better place to find out!
+
+    Welcome to the stylesheet impress.js demo presentation.
+
+    Please remember that it is not meant to be a part of impress.js and is
+    not required by impress.js.
+    I expect that anyone creating a presentation for impress.js would create
+    their own set of styles.
+
+    But feel free to read through it and learn how to get the most of what
+    impress.js provides.
+
+    And let me be your guide.
+
+    Shall we begin?
+*/
+
+
+/*
+    We start with a good ol' reset.
+    That's the one by Eric Meyer http://meyerweb.com/eric/tools/css/reset/
+
+    You can probably argue if it is needed here, or not, but for sure it
+    doesn't do any harm and gives us a fresh start.
+*/
+
+html, body, div, span, applet, object, iframe,
+h1, h2, h3, h4, h5, h6, p, blockquote, pre,
+a, abbr, acronym, address, big, cite, code,
+del, dfn, em, img, ins, kbd, q, s, samp,
+small, strike, strong, sub, sup, tt, var,
+b, u, i, center,
+dl, dt, dd, ol, ul, li,
+fieldset, form, label, legend,
+table, caption, tbody, tfoot, thead, tr, th, td,
+article, aside, canvas, details, embed,
+figure, figcaption, footer, header, hgroup,
+menu, nav, output, ruby, section, summary,
+time, mark, audio, video {
+    margin: 0;
+    padding: 0;
+    border: 0;
+    font-size: 100%;
+    font: inherit;
+    vertical-align: baseline;
+}
+
+/* HTML5 display-role reset for older browsers */
+article, aside, details, figcaption, figure,
+footer, header, hgroup, menu, nav, section {
+    display: block;
+}
+body {
+    line-height: 1;
+}
+ol, ul {
+    list-style: none;
+}
+blockquote, q {
+    quotes: none;
+}
+blockquote:before, blockquote:after,
+q:before, q:after {
+    content: '';
+    content: none;
+}
+
+table {
+    border-collapse: collapse;
+    border-spacing: 0;
+}
+
+/*
+    Now here is when interesting things start to appear.
+
+    We set up <body> styles with default font and nice gradient in the background.
+    And yes, there is a lot of repetition there because of -prefixes but we don't
+    want to leave anybody behind.
+*/
+body {
+    font-family: 'PT Sans', sans-serif;
+    min-height: 740px;
+
+    /*background: rgb(215, 215, 215);*/
+    /*background: -webkit-gradient(radial, 50% 50%, 0, 50% 50%, 500, from(rgb(240, 240, 240)), to(rgb(190, 190, 190)));*/
+    /*background: -webkit-radial-gradient(rgb(240, 240, 240), rgb(190, 190, 190));*/
+    /*background:    -moz-radial-gradient(rgb(240, 240, 240), rgb(190, 190, 190));*/
+    /*background:     -ms-radial-gradient(rgb(240, 240, 240), rgb(190, 190, 190));*/
+    /*background:      -o-radial-gradient(rgb(240, 240, 240), rgb(190, 190, 190));*/
+    background:         radial-gradient(rgb(255, 255, 255), rgba(236, 245, 255, 0.34));
+}
+
+/*
+    Now let's bring some text styles back ...
+*/
+b, strong { font-weight: bold }
+i, em { font-style: italic }
+
+
+
+/*
+    Now let's style the presentation steps.
+
+    We start with basics to make sure it displays correctly in everywhere ...
+*/
+
+.step {
+    position: relative;
+    width: 900px;
+    padding: 40px;
+    margin: 20px auto;
+
+    -webkit-box-sizing: border-box;
+    -moz-box-sizing:    border-box;
+    -ms-box-sizing:     border-box;
+    -o-box-sizing:      border-box;
+    box-sizing:         border-box;
+
+    font-family: Verdana, georgia, serif;
+    font-size: 48px;
+    line-height: 1.5;
+}
+
+/*
+    ... and we enhance the styles for impress.js.
+
+    Basically we remove the margin and make inactive steps a little bit transparent.
+*/
+.impress-enabled .step {
+    margin: 0;
+    opacity: 0;
+    /*visibility: hidden;*/
+
+    -webkit-transition: opacity 1s;
+    -moz-transition:    opacity 1s;
+    -ms-transition:     opacity 1s;
+    -o-transition:      opacity 1s;
+    transition:         opacity 1s;
+}
+
+.impress-enabled .step.active { opacity: 1 }
+
+/*
+    These 'slide' step styles were heavily inspired by HTML5 Slides:
+    http://html5slides.googlecode.com/svn/trunk/styles.css
+
+    ;)
+
+    They cover everything what you see on first three steps of the demo.
+*/
+
+
+
+.slide {
+    display: block;
+
+    width: 900px;
+    height: 700px;
+    padding: 40px 60px;
+
+    /*background-color: white;*/
+    /*border: 1px solid rgba(0, 0, 0, .3);*/
+    /*border-radius: 10px;*/
+    /*box-shadow: 0 2px 6px rgba(0, 0, 0, .1);*/
+
+    color: rgb(102, 102, 102);
+    /*text-shadow: 0 2px 2px rgba(0, 0, 0, .1);*/
+
+    font-family: Verdana, Arial, Helvetica, sans-serif
+    font-size: 30px;
+    line-height: 36px;
+    letter-spacing: -1px;
+}
+
+.slide img {
+    max-width: 800px;
+    height: auto;
+    width: auto;
+    border-radius: 10px;
+    box-shadow: 0 5px 6px rgba(0, 0, 0, .1);
+
+}
+
+
+.slide q strong {
+    white-space: nowrap;
+}
+
+
+.dresden-slide {
+
+
+    background-image: url("backrounds/dresden.jpg");
+    background-repeat: no-repeat;
+    /*background-size:;*/
+
+
+    /*background-color: white;*/
+    /*border: 1px solid rgba(0, 0, 0, .3);*/
+    /*border-radius: 10px;*/
+    /*box-shadow: 0 2px 6px rgba(0, 0, 0, .1);*/
+
+    color: rgb(255, 255, 255);
+    text-shadow: 0 2px 2px rgba(0, 0, 0, .1);
+
+    font-family: Verdana, Arial, Helvetica, sans-serif
+    font-size: 30px;
+    line-height: 60px;
+    /*letter-spacing: -1px;*/
+}
+
+.qub-slide {
+    background-image: url("backrounds/qub.jpg");
+    background-repeat: no-repeat;
+    color: rgb(255, 255, 255);
+    text-shadow: 0 2px 2px rgba(0, 0, 0, .1);
+
+    font-family: Verdana, Arial, Helvetica, sans-serif
+    font-size: 30px;
+    line-height: 60px;
+}
+
+
+.edu {
+    font-family: Helvetica, sans-serif;
+    text-transform: uppercase;
+}
+
+.year {
+    font-size: 2rem;
+}
+
+.impress-on-overview .step {
+    opacity: 1;
+    cursor: pointer;
+}
+
+#overview {
+    /*transform: rotateX(10deg);*/
+}
+
+
+
+/*
+    Now we 'enable' the hint when presentation is initialized ...
+*/
+.impress-enabled .hint { display: block }
+
+/*
+    ... and we will show it when the first step (with id 'bored') is active.
+*/
+.impress-on-bored .hint {
+    /*
+        We remove the transparency and position the hint in its default fixed
+        position.
+    */
+    opacity: 1;
+
+    -webkit-transform: translateY(0px);
+    -moz-transform:    translateY(0px);
+    -ms-transform:     translateY(0px);
+    -o-transform:      translateY(0px);
+    transform:         translateY(0px);
+
+    /*
+        Now for fade in transition we have the oposite situation from the one
+        above.
+
+        First after 4.5s delay we animate the transform property to move the hint
+        into its correct position and after that we fade it in with opacity
+        transition.
+    */
+    -webkit-transition: opacity 1s 5s, -webkit-transform 0.5s 4.5s;
+    -moz-transition:    opacity 1s 5s,    -moz-transform 0.5s 4.5s;
+    -ms-transition:     opacity 1s 5s,     -ms-transform 0.5s 4.5s;
+    -o-transition:      opacity 1s 5s,      -o-transform 0.5s 4.5s;
+    transition:         opacity 1s 5s,         transform 0.5s 4.5s;
+}
+
+/*
+    And as the last thing there is a workaround for quite strange bug.
+    It happens a lot in Chrome. I don't remember if I've seen it in Firefox.
+
+    Sometimes the element positioned in 3D (especially when it's moved back
+    along Z axis) is not clickable, because it falls 'behind' the <body>
+    element.
+
+    To prevent this, I decided to make <body> non clickable by setting
+    pointer-events property to `none` value.
+    Value if this property is inherited, so to make everything else clickable
+    I bring it back on the #impress element.
+
+    If you want to know more about `pointer-events` here are some docs:
+    https://developer.mozilla.org/en/CSS/pointer-events
+
+    There is one very important thing to notice about this workaround - it makes
+    everything 'unclickable' except what's in #impress element.
+
+    So use it wisely ... or don't use at all.
+*/
+.impress-enabled          { pointer-events: none }
+.impress-enabled #impress { pointer-events: auto }
+
+/*
+    There is one funny thing I just realized.
+
+    Thanks to this workaround above everything except #impress element is invisible
+    for click events. That means that the hint element is also not clickable.
+    So basically all of this transforms and delayed transitions trickery was probably
+    not needed at all...
+
+    But it was fun to learn about it, wasn't it?
+*/
+
+/*
+    That's all I have for you in this file.
+    Thanks for reading. I hope you enjoyed it at least as much as I enjoyed writing it
+    for you.
+*/
+
+.banner {
+    /*background-color: #FFCC33;*/
+    /*background-color: rgba(255, 202, 51, 0.35);*/
+    width: 100%;
+    /*box-shadow: 0px 2px 2px 1px rgba(0, 0, 0, 0.2);*/
+    /*padding: 20px;*/
+    margin-top: 20px;
+}
+
+.project {
+
+    /*background-color: rgba(255,202,51,.8);*/
+
+    /*background-color: white;*/
+    font-size: 30px;
+    /*padding-left: 20px;*/
+
+    color:#333;
+}
+
+.clock {
+    color: #666;
+
+    /*position: fixed;*/
+    /*bottom: 0px;*/
+    width:100%;
+
+    font-size: 20px;
+    /*padding: 20px;*/
+}
+
+
+body {
+    /*transition: background-image 2s ease-in-out;*/
+    -webkit-transition: background 1.5s linear;
+    -moz-transition: background 1.5s linear;
+    -o-transition: background 1.5s linear;
+    -ms-transition: background 1.5s linear;
+    transition: background 1.5s linear;
+}
+
+body.impress-on-overview  {
+    background:         radial-gradient(rgb(255, 255, 255), rgba(168, 175, 184, 0.34));
+}
+
+.impress-on-dresden #backdrop{
+    background-image: url("backrounds/dresden-blur.jpg");
+    background-repeat: no-repeat;
+    background-size: cover;
+    opacity: 1;
+}
+
+.impress-on-qub #backdrop{
+    background-image: url("backrounds/qub-blur.jpg");
+    background-repeat: no-repeat;
+    background-size: cover;
+    opacity: 1;
+}
+
+
+.impress-on-step-3 #backdrop {
+    background-image: url("backrounds/qub-blur.jpg");
+    background-repeat: no-repeat;
+    background-size: cover;
+    opacity: 0;
+}
+
+#backdrop {
+    opacity: 0;
+    position: absolute;
+    top:0;
+    bottom: 0;
+    left:0;
+    right: 0;
+    background-color: transparent;
+    transition: all .5s ease-in;
+}
+
