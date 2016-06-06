@@ -236,8 +236,39 @@ i, em { font-style: italic }
 
 .impress-on-overview .step {
     opacity: 1;
-    cursor: pointer;
+    /*cursor: pointer;*/
 }
+
+.impress-on-overview #hallo {
+    opacity: 0;
+    /*cursor: pointer;*/
+}
+
+.impress-on-hallo #overview {
+    opacity: 0;
+    /*cursor: pointer;*/
+}
+
+
+.impress-on-hallo .step {
+    opacity: 1;
+    /*background:white;/*/
+    /*border:40px solid white;*/
+    /*cursor: pointer;*/
+    /*filter: blur(20px) grayscale(20%);*/
+}
+
+#hallo {
+    border:none;
+    background:transparent;
+}
+
+.impress-on-hallo .step {
+    opacity: 1;
+    /*cursor: pointer;*/
+    /*filter: blur(20px) grayscale(20%);*/
+}
+
 
 #overview {
     /*transform: rotateX(10deg);*/
